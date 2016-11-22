@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Click : MonoBehaviour {
 
-    public UnityEngine.UI.Text mGoldDisplay;
+    [SerializeField]
+    private Text mGoldDisplay;
+    [SerializeField]
+    private Text mGPC;
     
     public float currentGold = 0.0f;
     public float goldPerClick = 1.0f;
@@ -11,6 +15,7 @@ public class Click : MonoBehaviour {
     void Update()
     {
         mGoldDisplay.text = "Gold: " + currentGold;
+        mGPC.text = goldPerClick + " Gold/Click";
     }
 
     public void Clicked()
