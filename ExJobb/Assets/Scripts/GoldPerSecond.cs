@@ -18,9 +18,9 @@ public class GoldPerSecond : MonoBehaviour {
         brpsDisplay.text = GetBrPerSec() + " Brainz/Second";
     }
 
-    public int GetBrPerSec()
+    public float GetBrPerSec()
     {
-        int tick = 0;
+        float tick = 0;
         foreach(ItemManager item in items)
         {
             tick += item.count * item.tickValue;
@@ -30,7 +30,7 @@ public class GoldPerSecond : MonoBehaviour {
 
     public void AutoBrPerSec()
     {
-        click.currentBr += GetBrPerSec();
+        click.currentBr += GetBrPerSec() / 100;
     }
 
     IEnumerator AutoTick()
@@ -38,7 +38,7 @@ public class GoldPerSecond : MonoBehaviour {
         while (true)
         {
             AutoBrPerSec();
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 	
