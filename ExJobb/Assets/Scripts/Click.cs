@@ -5,22 +5,22 @@ using UnityEngine.UI;
 public class Click : MonoBehaviour {
 
     [SerializeField]
-    private Text mGoldDisplay;
+    private Text mBrDisplay;
     [SerializeField]
-    private Text mGPC;
+    private Text mBPC;
     
-    public float currentGold = 0.0f;
-    public float goldPerClick = 1.0f;
+    public float currentBr = 0.0f;
+    public float brPerClick = 1.0f;
 
     void Update()
     {
-        mGoldDisplay.text = "Gold: " + currentGold;
-        mGPC.text = goldPerClick + " Gold/Click";
+        mBrDisplay.text = "Brainz eaten: " + currentBr;
+        mBPC.text = brPerClick + " Brainz/Click";
     }
 
     public void Clicked()
     {
-        currentGold += goldPerClick;
+        currentBr += brPerClick;
     }
 
 }

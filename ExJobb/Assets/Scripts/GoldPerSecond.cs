@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class GoldPerSecond : MonoBehaviour {
 
-    public Text gpsDisplay;
+    public Text brpsDisplay;
     public Click click;
     public ItemManager[] items;
 
@@ -15,10 +15,10 @@ public class GoldPerSecond : MonoBehaviour {
 
     void Update()
     {
-        gpsDisplay.text = GetGoldPerSec() + " Gold/Second";
+        brpsDisplay.text = GetBrPerSec() + " Brainz/Second";
     }
 
-    public int GetGoldPerSec()
+    public int GetBrPerSec()
     {
         int tick = 0;
         foreach(ItemManager item in items)
@@ -28,16 +28,16 @@ public class GoldPerSecond : MonoBehaviour {
         return tick;
     }
 
-    public void AutoGoldPerSec()
+    public void AutoBrPerSec()
     {
-        click.currentGold += GetGoldPerSec();
+        click.currentBr += GetBrPerSec();
     }
 
     IEnumerator AutoTick()
     {
         while (true)
         {
-            AutoGoldPerSec();
+            AutoBrPerSec();
             yield return new WaitForSeconds(1);
         }
     }

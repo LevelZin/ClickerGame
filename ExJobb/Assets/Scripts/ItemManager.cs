@@ -23,7 +23,7 @@ public class ItemManager : MonoBehaviour {
     {
         itemInfo.text = itemName + "\nCost: " + itemCost + "\nGold: " + tickValue + "/s";
 
-        if (click.currentGold >= itemCost)
+        if (click.currentBr >= itemCost)
         {
             UpgrAvailable.GetComponent<Text>().enabled = true;
             button.GetComponent<Button>().interactable = true;
@@ -37,9 +37,9 @@ public class ItemManager : MonoBehaviour {
 
     public void PurchaseItem()
     {
-        if(click.currentGold >= itemCost)
+        if(click.currentBr >= itemCost)
         {
-            click.currentGold -= itemCost;
+            click.currentBr -= itemCost;
             count++;
             itemCost = Mathf.Round(baseCost * Mathf.Pow(1.15f, count));
         }

@@ -23,7 +23,7 @@ public class UpgradeManager : MonoBehaviour {
     {
         itemInfo.text = itemName + "\nCost: " + upgradeCost + "\nPower + " + clickPower;
 
-        if (click.currentGold >= upgradeCost)
+        if (click.currentBr >= upgradeCost)
         {
             UpgrAvailable.GetComponent<Text>().enabled = true;
             button.GetComponent<Button>().interactable = true;
@@ -37,11 +37,11 @@ public class UpgradeManager : MonoBehaviour {
 
     public void PurchaseUpgrade()
     {
-        if(click.currentGold >= upgradeCost)
+        if(click.currentBr >= upgradeCost)
         {
-            click.currentGold -= upgradeCost;
+            click.currentBr -= upgradeCost;
             count++;
-            click.goldPerClick += clickPower;
+            click.brPerClick += clickPower;
             upgradeCost = Mathf.Round(upgradeCost * Mathf.Pow(1.15f, count));
             clickPower = Mathf.Round(clickPower * Mathf.Pow(1.15f, count));
         }
