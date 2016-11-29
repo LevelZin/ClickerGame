@@ -15,7 +15,8 @@ public class GoldPerSecond : MonoBehaviour {
 
     void Update()
     {
-        brpsDisplay.text = GetBrPerSec() + " Brainz/Second";
+        //brpsDisplay.text = GetBrPerSec() + " Brainz/Second";
+        brpsDisplay.text = GetBrPerSec().ToString("F0") + " Brainz/Second";
     }
 
     public float GetBrPerSec()

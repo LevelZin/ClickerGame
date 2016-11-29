@@ -21,7 +21,8 @@ public class UpgradeManager : MonoBehaviour {
 
     void Update()
     {
-        itemInfo.text = itemName + "\nCost: " + upgradeCost + "\nPower + " + clickPower;
+        //itemInfo.text = itemName + "\nCost: " + upgradeCost + "\nPower + " + clickPower;
+        itemInfo.text = itemName + "\nCost: " + upgradeCost.ToString("F0") + "\nPower + " + clickPower.ToString("F0");
 
         if (click.currentBr >= upgradeCost)
         {

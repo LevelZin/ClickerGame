@@ -15,7 +15,8 @@ public class Click : MonoBehaviour {
     void Update()
     {
         mBrDisplay.text = "Brainz eaten: " + currentBr.ToString("F0");
-        mBPC.text = brPerClick + " Brainz/Click";
+        //mBPC.text = brPerClick + " Brainz/Click";
+        mBPC.text = brPerClick.ToString("F0") + " Brainz/Click";
     }
 
     public void Clicked()

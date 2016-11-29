@@ -21,7 +21,8 @@ public class ItemManager : MonoBehaviour {
 
     void Update()
     {
-        itemInfo.text = itemName + "\nCost: " + itemCost + "\nGold: " + tickValue + "/s";
+        //itemInfo.text = itemName + "\nCost: " + itemCost + "\nGold: " + tickValue + "/s";
+        itemInfo.text = itemName + "\nCost: " + itemCost.ToString("F0") + "\nGold: " + tickValue + "/s";
 
         if (click.currentBr >= itemCost)
         {
