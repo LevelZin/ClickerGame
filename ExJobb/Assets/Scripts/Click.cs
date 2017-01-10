@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Globalization;
 
 public class Click : MonoBehaviour {
 
@@ -14,9 +15,9 @@ public class Click : MonoBehaviour {
 
     void Update()
     {
-        mBrDisplay.text = "Brainz eaten: " + currentBr.ToString("F0");
+        mBrDisplay.text = "Brainz eaten: " + (currentBr.ToString("N0", CultureInfo.CreateSpecificCulture("sv-SE")));
         //mBPC.text = brPerClick + " Brainz/Click";
-        mBPC.text = brPerClick.ToString("F0") + " Brainz/Click";
+        mBPC.text = brPerClick.ToString("N0", CultureInfo.CreateSpecificCulture("sv-SE")) + " Brainz/Click";
     }
 
     public void Clicked()

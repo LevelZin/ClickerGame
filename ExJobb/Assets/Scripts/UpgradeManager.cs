@@ -21,19 +21,21 @@ public class UpgradeManager : MonoBehaviour {
 
     void Update()
     {
+
+        if (click.currentBr >= upgradeCost)
+            {
+                UpgrAvailable.GetComponent<Text>().enabled = true;
+                button.GetComponent<Button>().interactable = true;
+            }
+            else
+            {
+                UpgrAvailable.GetComponent<Text>().enabled = false;
+                button.GetComponent<Button>().interactable = false;
+            }
+        
         //itemInfo.text = itemName + "\nCost: " + upgradeCost + "\nPower + " + clickPower;
         itemInfo.text = itemName + "\nCost: " + upgradeCost.ToString("F0") + "\nPower + " + clickPower.ToString("F0");
 
-        if (click.currentBr >= upgradeCost)
-        {
-            UpgrAvailable.GetComponent<Text>().enabled = true;
-            button.GetComponent<Button>().interactable = true;
-        }
-        else
-        {
-            UpgrAvailable.GetComponent<Text>().enabled = false;
-            button.GetComponent<Button>().interactable = false;
-        }
     }
 
     public void PurchaseUpgrade()

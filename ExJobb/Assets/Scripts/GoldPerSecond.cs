@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Globalization;
 
 public class GoldPerSecond : MonoBehaviour {
 
@@ -16,7 +17,7 @@ public class GoldPerSecond : MonoBehaviour {
     void Update()
     {
         //brpsDisplay.text = GetBrPerSec() + " Brainz/Second";
-        brpsDisplay.text = GetBrPerSec().ToString("F0") + " Brainz/Second";
+        brpsDisplay.text = GetBrPerSec().ToString("N0", CultureInfo.CreateSpecificCulture("sv-SE")) + " Brainz/Second";
     }
 
     public float GetBrPerSec()
@@ -31,7 +32,9 @@ public class GoldPerSecond : MonoBehaviour {
 
     public void AutoBrPerSec()
     {
+        float debugBr = 0.0f;
         click.currentBr += GetBrPerSec() / 100;
+        //Debug.Log("Total Brainz based on BPS: " + (debugBr += GetBrPerSec()));
     }
 
     IEnumerator AutoTick()

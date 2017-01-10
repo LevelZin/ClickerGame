@@ -21,19 +21,20 @@ public class ItemManager : MonoBehaviour {
 
     void Update()
     {
+        if (click.currentBr >= itemCost)
+            {
+                UpgrAvailable.GetComponent<Text>().enabled = true;
+                button.GetComponent<Button>().interactable = true;
+            }
+            else
+            {
+                UpgrAvailable.GetComponent<Text>().enabled = false;
+                button.GetComponent<Button>().interactable = false;
+            }
+        
         //itemInfo.text = itemName + "\nCost: " + itemCost + "\nGold: " + tickValue + "/s";
         itemInfo.text = itemName + "\nCost: " + itemCost.ToString("F0") + "\nGold: " + tickValue + "/s";
 
-        if (click.currentBr >= itemCost)
-        {
-            UpgrAvailable.GetComponent<Text>().enabled = true;
-            button.GetComponent<Button>().interactable = true;
-        }
-        else
-        {
-            UpgrAvailable.GetComponent<Text>().enabled = false;
-            button.GetComponent<Button>().interactable = false;
-        }
     }
 
     public void PurchaseItem()
