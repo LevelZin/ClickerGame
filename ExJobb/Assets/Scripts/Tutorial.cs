@@ -33,7 +33,7 @@ public class Tutorial : MonoBehaviour {
 
     IEnumerator WaitOnClose()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         tutorialCanvas.GetComponent<Canvas>().enabled = false;
 
     }

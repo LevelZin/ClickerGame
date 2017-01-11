@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Globalization;
+using System;
 
 public class GoldPerSecond : MonoBehaviour {
 
@@ -32,8 +33,9 @@ public class GoldPerSecond : MonoBehaviour {
 
     public void AutoBrPerSec()
     {
-        float debugBr = 0.0f;
         click.currentBr += GetBrPerSec() / 100;
+        click.tempPop = GetBrPerSec() / 100;
+        click.population -= Convert.ToInt64(click.tempPop);
         //Debug.Log("Total Brainz based on BPS: " + (debugBr += GetBrPerSec()));
     }
 
